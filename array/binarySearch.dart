@@ -6,7 +6,6 @@ main() {
 binarySearch(List<int> list, int x) {
   int min = 0;
   int max = min + list.length - 1;
-  print(max);
   while (min <= max) {
     int mid = ((min + max) / 2).floor();
     if (x == list[mid]) {
