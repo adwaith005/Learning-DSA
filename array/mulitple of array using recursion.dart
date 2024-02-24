@@ -5,6 +5,8 @@ void main() {
 }
 
 int Product(List<int> myList, int index) {
+  print(myList.length);
+
   if (index == myList.length - 1) {
     return myList[index]; // base case: when index reaches the last element
   } else {
