@@ -9,7 +9,7 @@ binarySearch(List<int> list, int x) {
   while (min <= max) {
     int mid = ((min + max) / 2).floor();
     if (x == list[mid]) {
-      return "Found  $x at Index $mid";
+          return "Found  $x at Index $mid";
     } else if (x < list[mid]) {
       max = mid - 1;
     } else {

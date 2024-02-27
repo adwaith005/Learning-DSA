@@ -1,47 +1,43 @@
 class Node {
-  int data;
+  dynamic data;
   Node? next;
 
-  Node(this.data) {
-    next = null;
-  }
+  Node(this.data);
 }
 
-class SinglyLinkedList {
+class LinkedList {
   Node? head;
 
-  void insert(int data) {
-    Node newNode = Node(data);
+  LinkedList();
+
+  void insert(dynamic data) {
     if (head == null) {
-      head = newNode;
+      head = Node(data);
     } else {
-      Node temp = head!;
-      while (temp.next != null) {
-        temp = temp.next!;
+      Node? currentNode = head;
+      while (currentNode!.next != null) {
+        currentNode = currentNode.next;
       }
-      temp.next = newNode;
+      currentNode.next = Node(data);
     }
   }
 
-  void display() {
-    Node? temp = head;
-    while (temp != null) {
-      print(temp.data);
-      temp = temp.next;
+  void printList() {
+    Node? currentNode = head;
+    while (currentNode != null) {
+      print(currentNode.data);
+      currentNode = currentNode.next;
     }
   }
-}
-
-SinglyLinkedList arrayToLinkedList(List<int> arr) {
-  SinglyLinkedList list = SinglyLinkedList();
-  for (int i = 0; i < arr.length; i++) {
-    list.insert(arr[i]);
-  }
-  return list;
 }
 
 void main() {
-  List<int> arr = [1, 2, 3, 4, 5];
-  SinglyLinkedList list = arrayToLinkedList(arr);
-  list.display();
+  List<dynamic> array = [1, 2, 3, 4, 5];
+  LinkedList linkedList = LinkedList();
+
+  for (var element in array) {
+    linkedList.insert(element);
+  }
+
+  linkedList.printList();
 }
