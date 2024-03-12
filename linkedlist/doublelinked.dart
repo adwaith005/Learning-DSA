@@ -9,14 +9,9 @@ void main() {
   print("Forward traversal:");
   list.displayForward();
 
-  print("\nBackward traversal:");
-  list.displayBackward();
 
-  list.delete(3); // Deleting node with value 3
-
-  print("\nAfter deletion:");
-  list.displayForward();
 }
+
 class Node {
   int data;
   Node? prev;
@@ -49,39 +44,39 @@ class DoublyLinkedList {
     }
   }
 
-  void displayBackward() {
-    Node? current = tail;
-    while (current != null) {
-      print(current.data);
-      current = current.prev;
-    }
-  }
+  // void displayBackward() {
+  //   Node? current = tail;
+  //   while (current != null) {
+  //     print(current.data);
+  //     current = current.prev;
+  //   }
+  // }
 
-  void delete(int valueToDelete) {
-    if (head == null) {
-      return;
-    }
+  // void delete(int valueToDelete) {
+  //   if (head == null) {
+  //     return;
+  //   }
 
-    if (head!.data == valueToDelete) {
-      head = head!.next;
-      if (head != null) {
-        head!.prev = null;
-      }
-      return;
-    }
+  //   if (head!.data == valueToDelete) {
+  //     head = head!.next;
+  //     if (head != null) {
+  //       head!.prev = null;
+  //     }
+  //     return;
+  //   }
 
-    Node? current = head;
-    while (current!.next != null) {
-      if (current.next!.data == valueToDelete) {
-        current.next = current.next!.next;
-        if (current.next != null) {
-          current.next!.prev = current;
-        } else {
-          tail = current;
-        }
-        return;
-      }
-      current = current.next;
-    }
-  }
+  //   Node? current = head;
+  //   while (current!.next != null) {
+  //     if (current.next!.data == valueToDelete) {
+  //       current.next = current.next!.next;
+  //       if (current.next != null) {
+  //         current.next!.prev = current;
+  //       } else {
+  //         tail = current;
+  //       }
+  //       return;
+  //     }
+  //     current = current.next;
+  //   }
+  // }
 }

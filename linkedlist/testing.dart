@@ -1,23 +1,57 @@
+void main() {
+  Sl list = Sl();
+  list.add(4);
+  list.add(2);
+  list.add(7);
+  list.add(4);
+  list.add(2);
+  list.add(7);
+  print("before removing");
+  list.display();
+  list.removeDuplicates();
+  print("after removing duplicates");
+  list.display();
+}
+
 class Node {
   int data;
   Node? next;
-
-  Node(this.data, {this.next});
+  Node? prev;
+  Node(this.data);
 }
 
-class SinglyLinkedList {
+class Sl {
   Node? head;
+  Node? tail;
 
-  void insert(int data) {
-    Node newNode = Node(data);
+  void add(int data) {
+    Node? newNode = Node(data);
     if (head == null) {
       head = newNode;
+      tail = newNode;
     } else {
-      Node? current = head;
-      while (current!.next != null) {
-        current = current.next;
+      tail!.next = newNode;
+      newNode.prev = tail;
+      tail = newNode;
+    }
+  }
+
+  void removeDuplicates() {
+    if (head == null) {
+      return;
+    }
+
+    Node? current = head;
+    while (current != null) {
+      Node? runner = current;
+      while (runner!.next != null) {
+        if (runner.next!.data == current.data) {
+          runner.next = runner.next!.next;
+        } else {
+          runner = runner.next;
+        }
       }
-      current.next = newNode;
+      current = current.next;
     }
   }
 
@@ -28,15 +62,4 @@ class SinglyLinkedList {
       current = current.next;
     }
   }
-}
-
-void main() {
-  SinglyLinkedList list = SinglyLinkedList();
-  list.insert(1);
-  list.insert(2);
-  list.insert(3);
-  list.insert(4);
-  list.insert(5);
-
-  list.display();
 }

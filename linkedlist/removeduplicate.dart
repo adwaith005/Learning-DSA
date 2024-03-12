@@ -1,14 +1,36 @@
+void main() {
+  LinkedList myList = LinkedList();
+
+  // Adding nodes to the list
+  myList.add(2);
+  myList.add(6);
+  myList.add(2);
+  myList.add(2);
+  myList.add(6);
+  myList.add(2);
+  myList.add(4);
+  myList.add(6);
+
+  print("Before removing duplicates:");
+  myList.printList();
+
+  myList.removeDuplicates();
+
+  print("\nAfter removing duplicates:");
+  myList.printList();
+}
+
 class Node {
   int data;
-  Node? next; // Use Node? to allow null
+  Node? next;
 
   Node(this.data);
 }
 
 class LinkedList {
-  Node? head; // Use Node? to allow null
+  Node? head;
 
-  void insert(int data) {
+  void add(int data) {
     Node newNode = Node(data);
     if (head == null) {
       head = newNode;
@@ -22,40 +44,29 @@ class LinkedList {
   }
 
   void removeDuplicates() {
-    if (head == null) return;
+    if (head == null) {
+      return;
+    }
 
     Node? current = head;
-    while (current != null && current.next != null) {
-      if (current.data == current.next!.data) {
-        current.next = current.next!.next;
-      } else {
-        current = current.next;
+    while (current != null) {
+      Node? runner = current;
+      while (runner!.next != null) {
+        if (runner.next!.data == current.data) {
+          runner.next = runner.next!.next;
+        } else {
+          runner = runner.next;
+        }
       }
+      current = current.next;
     }
   }
 
-  void display() {
+  void printList() {
     Node? current = head;
     while (current != null) {
       print(current.data);
       current = current.next;
     }
   }
-}
-
-void main() {
-  LinkedList list = LinkedList();
-  list.insert(1);
-  list.insert(1);
-  list.insert(2);
-  list.insert(3);
-  list.insert(3);
-  list.insert(4);
-
-  print("Original List:");
-  list.display();
-
-  print("\nList after removing duplicates:");
-  list.removeDuplicates();
-  list.display();
 }

@@ -5,17 +5,17 @@ main() {
 }
 
 deleteValue(List<int> list, int x) {
-  int flag = -1;
+  int flag = 0;
   for (int i = 0; i < list.length; i++) {
     if (list[i] == x) {
       flag = i;
       break;
     }
   }
-  if (flag != -1) {
+  if (flag != 0) {
     for (int i = flag; i < list.length - 1; i++) {
       list[i] = list[i + 1];
     }
-    list.length--; // Decrease the length of the list to remove the last element
+    list.length--;
   }
 }

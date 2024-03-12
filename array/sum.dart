@@ -1,9 +1,10 @@
-void main (){
-  List<int> num = [1,2,3,4,5,6,7];
-  int sum = 0; 
-  for(int i = 0 ; i <= num.length ; i++){
-    sum = num[i] + 1;
-  }
-    print('Sum of the list is $sum');
+void main() {
+  List<int> numbers = [1, 2, 3, 4, 5];
+  int sum = 0;
 
+  for (int i = 0; i < numbers.length; i++) {
+    sum = numbers[i] + sum;
+  }
+
+  print('Sum of array: $sum');
 }

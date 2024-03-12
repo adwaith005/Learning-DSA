@@ -1,13 +1,14 @@
 void main() {
-  List<int> myList = [5, 6, 7, 8, 9];
-  int result = Sum(myList, 0);
+  List<int> list = [5, 6, 7, 8, 9];
+  int result = Sum(list, 0);
+  
   print("Product of the list elements: $result");
 }
 
-int Sum(List<int> myList, int n) {
-  if (n == myList.length - 1) {
-    return myList[n]; // base case: when index reaches the last element
+int Sum(List<int> list, int n) {
+  if (n == list.length - 1) {
+    return list[n]; 
   } else {
-    return myList[n] + Sum(myList, n + 1); // recursive case
+    return list[n] + Sum(list, n + 1); 
   }
 }

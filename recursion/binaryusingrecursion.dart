@@ -1,27 +1,21 @@
 void main() {
   List<int> sortedArray = [2, 5, 7, 10, 13, 17, 21];
-  int target = 13;
+  int target = 3;
   int result = binarySearch(sortedArray, target, 0, sortedArray.length - 1);
   if (result != -1)
     print("Element $target is present at index $result");
   else
-    print("Element $target is not present in array");
-} 
+    print("Element $target is not present in array"); 
+}
 
-int binarySearch(List<int> array, int target, int low, int high) {
-  if (high >= low) {
-    int mid = low + ((high - low) ~/ 2);
-
-    // If the element is present at the middle itself
+int binarySearch(List<int> array, int target, int min, int max) {
+  if (min <= max) {
+    print(max);
+    int mid = min + ((max - min) / 2).floor();
     if (array[mid] == target) return mid;
-
-    // If element is smaller than mid, then it can only be present in left subarray
-    if (array[mid] > target) return binarySearch(array, target, low, mid - 1);
-
-    // Else the element can only be present in right subarray
-    return binarySearch(array, target, mid + 1, high);
+    if (array[mid] > target) return binarySearch(array, target, min, mid - 1);
+    return binarySearch(array, target, mid + 1, max);
   }
 
-  // Element is not present in array
   return -1;
 }

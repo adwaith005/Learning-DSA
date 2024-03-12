@@ -2,12 +2,9 @@ void main() {
   SinglyLinkedList list = SinglyLinkedList();
   list.insert(1);
   list.insert(2);
-  list.insert(3);
-  list.insert(4);
-  list.insert(5);
+  list.insert(3); 
   print("Before deletion:");
   list.display();
-  
   list.delete(3);
 
   print("\nAfter deletion:");
@@ -53,7 +50,7 @@ class SinglyLinkedList {
     if (head!.data == value) {
       head = head!.next;
       return;
-    }
+    } 
 
     Node? current = head;
     while (current!.next != null) {
@@ -61,7 +58,7 @@ class SinglyLinkedList {
         current.next = current.next!.next;
         return;
       }
-      current = current.next;
-    }
+      current = current.next; 
+    }  
   }
-}
+} 

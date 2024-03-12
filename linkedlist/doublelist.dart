@@ -1,44 +1,38 @@
 void main() {
-  DoublyLinkedList list = DoublyLinkedList();
-  list.insert(1);
-  list.insert(2);
-  list.insert(3);
+  Dl list = Dl();
+  list.add(3);
+  list.add(2);
   list.display();
 }
 
 class Node {
   int data;
-  Node? prev;
   Node? next;
-
-  Node(this.data) {
-    prev = null;
-    next = null;
-  }
+  Node? prev;
+  Node(this.data);
 }
 
-class DoublyLinkedList {
+class Dl {
   Node? head;
+  Node? tail;
 
-  void insert(int data) {
-    Node newNode = Node(data);
+  void add(int val) {
+    Node newNode = Node(val);
     if (head == null) {
       head = newNode;
     } else {
-      Node temp = head!;
-      while (temp.next != null) {
-        temp = temp.next!;
-      }
-      temp.next = newNode;
-      newNode.prev = temp;
+      tail!.next = newNode;
+      newNode.prev = tail;
     }
-  }
+    tail = newNode;
+  }   
 
   void display() {
-    Node? temp = head;
-    while (temp != null) {
-      print(temp.data);
-      temp = temp.next;
-    }
+    Node? current = head;
+    while (current != null) {
+      print(current.data);
+      current = current.next;
+    } 
   }
+
 }
