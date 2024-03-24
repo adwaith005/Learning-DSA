@@ -8,6 +8,6 @@ int Product(List<int> list, int n) {
   if (n == list.length - 1) {
     return list[n];  
   } else {
-    return list[n] * Product(list, n + 1); // recursive case
+    return list[n] * Product(list, n + 1);  
   }
 }

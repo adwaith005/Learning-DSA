@@ -1,10 +1,13 @@
 void main() {
   Dl list = Dl();
-  list.append(0);
-  list.append(0);
-  list.append(0);
-  list.append(0);
-  list.prepend(1);
+  list.insert(1);
+  list.insert(2);
+  list.insert(3);
+  list.insert(4);
+  print("before deleting head");
+  list.display();
+  print("after deleting  head");
+  list.deletehead();
   list.display();
 }
 
@@ -19,8 +22,9 @@ class Dl {
   Node? head;
   Node? tail;
 
-  void append(int data) {
+  void insert(int data) {
     Node? newNode = Node(data);
+
     if (head == null) {
       head = newNode;
       tail = newNode;
@@ -31,18 +35,13 @@ class Dl {
     }
   }
 
-void prepend(int data) {
-  Node? newNode = Node(data);
-  if (head == null) {
-    head = newNode;
-    tail = newNode;
-  } else {
-    newNode.next = head;
-    head!.prev = newNode;
-    head = newNode;
+  void deletehead() {
+    if (head == null) {
+      return;
+    } else {
+      head = head!.next;
+    }
   }
-}
-
 
   void display() {
     Node? temp = head;

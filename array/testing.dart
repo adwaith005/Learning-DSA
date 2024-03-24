@@ -1,15 +1,17 @@
-//linear Search
-
 void main() {
-  List<int> list = [1, 2, 3, 4, 5, 6, 7];
-  print(Linearsearch(list, 4));
+  String text = "The quick brown fox jumps over the lazy gigantic dog";
+  String longestword = findlogestword(text);
+  print("the longest word in the sentance is $longestword");
 }
 
-Linearsearch(List<int> list, int x) {
-  for (int i = 0; i <= list.length; i++) {
-    if (x == list[i]) {
-      return "Found $x at index  $i";
+String findlogestword(String text) {
+  List<String> words = text.split(" ");
+  String longesrword = '';
+
+  for (String word in words) {
+    if (word.length > longesrword.length) {
+      longesrword = word;
     }
   }
-  return "Not Found";
+  return longesrword;
 }

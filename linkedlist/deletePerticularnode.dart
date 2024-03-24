@@ -57,7 +57,7 @@ class SinglyLinkedList {
       if (current.next!.data == value) {
         current.next = current.next!.next;
         return;
-      }
+      } 
       current = current.next; 
     }  
   }

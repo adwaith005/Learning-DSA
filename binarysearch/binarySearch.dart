@@ -1,5 +1,5 @@
 main() {
-  List<int> list = [0, 2, 5, 8, 10, 12, 15, 30];
+    List<int> list = [0, 2, 5, 8, 10, 12, 15, 30];
   print(binarySearch(list, 8));
 }
 

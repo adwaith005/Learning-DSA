@@ -1,43 +1,26 @@
-class Node {
-  dynamic data;
+void main() {
+  Sl list = Sl();
+  list.prepend(3);
+  list.prepend(1);
+  list.prepend(2);
+  list.prepend(5);
+}
+class Node{
+  int data;
   Node? next;
-
   Node(this.data);
 }
 
-class LinkedList {
-  Node? head;
+class Sl {
+ Node? head;
 
-  LinkedList();
+ void prepend(int data){
+  Node? newNode = Node(data);
+   if(head == null){
+    head = newNode;
+   }else{
+    newNode = head;
 
-  void insert(dynamic data) {
-    if (head == null) {
-      head = Node(data);
-    } else {
-      Node? currentNode = head;
-      while (currentNode!.next != null) {
-        currentNode = currentNode.next;
-      }
-      currentNode.next = Node(data);
-    }
-  }
-
-  void printList() {
-    Node? currentNode = head;
-    while (currentNode != null) {
-      print(currentNode.data);
-      currentNode = currentNode.next;
-    }
-  }
-}
-
-void main() {
-  List<dynamic> array = [1, 2, 3, 4, 5];
-  LinkedList linkedList = LinkedList();
-
-  for (var element in array) {
-    linkedList.insert(element);
-  }
-
-  linkedList.printList();
+   }
+ }
 }

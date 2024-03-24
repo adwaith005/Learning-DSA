@@ -4,11 +4,8 @@ void main() {
   list.add(2);
   list.add(3);
   list.add(4);
-  print("before deleting the middle element");
   list.printList();
-  print("after deleting");
-  list.deleteMiddle();
-  list.printList();
+  print('middle no is : ${list.printmiddle().data}');
 }
 
 class Node {
@@ -34,22 +31,20 @@ class LinkedList {
     }
   }
 
-  void deleteMiddle() {
+   printmiddle() {
     if (head == null || head!.next == null) {
       print("List is empty or contains only one element.");
       return;
     }
 
-    Node? slowPtr = head;
-    Node? fastPtr = head;
-    Node? prevPtr;
+    Node? slow = head;
+    Node? fast = head;
 
-    while (fastPtr != null && fastPtr.next != null) {
-      fastPtr = fastPtr.next!.next;
-      prevPtr = slowPtr;
-      slowPtr = slowPtr!.next;
+    while (fast != null && fast.next != null) {
+      fast= fast.next!.next;
+      slow = slow!.next;
     }
-    prevPtr!.next = slowPtr!.next;
+    return slow;
   }
 
   void printList() {
