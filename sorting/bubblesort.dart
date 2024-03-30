@@ -1,3 +1,10 @@
+void main() {
+  List<int> numbers = [64, 34, 25, 12, 22, 11, 90];
+  print("Original array: $numbers");
+  bubbleSort(numbers);
+  print("Sorted array: $numbers");
+}
+
 void bubbleSort(List<int> arr) {
   int n = arr.length;
   for (int i = 0; i < n - 1; i++) {
@@ -9,12 +16,5 @@ void bubbleSort(List<int> arr) {
         arr[j + 1] = temp;
       }
     }
-  }
-}
-
-void main() {
-  List<int> numbers = [64, 34, 25, 12, 22, 11, 90];
-  print("Original array: $numbers");
-  bubbleSort(numbers);
-  print("Sorted array: $numbers");
+  } 
 }

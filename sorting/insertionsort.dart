@@ -1,13 +1,13 @@
 void insertionSort(List<num> list) {
   int length = list.length;
   for (int i = 1; i < length; i++) {
-    num key = list[i];
+    num temp = list[i];
     int j = i - 1;
-    while (j >= 0 && list[j] > key) {
+    while (j >= 0 && list[j] > temp) {
       list[j + 1] = list[j];
-      j = j - 1;
+      j--;
     }
-    list[j + 1] = key;
+    list[j + 1] = temp;
   }
 }
 
