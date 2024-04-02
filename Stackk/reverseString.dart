@@ -4,6 +4,7 @@ void main() {
   print("Reversed string: ${reverseString(input)}");
 }
 
+
 class Stack {
   List _items = [];
 
@@ -12,7 +13,7 @@ class Stack {
   }
 
   dynamic pop() {
-    if (_items.isNotEmpty()) {
+    if (!isEmpty()) {
       return _items.removeLast();
     }
     return null;
@@ -39,3 +40,5 @@ String reverseString(String input) {
 
   return reversedString;
 }
+
+

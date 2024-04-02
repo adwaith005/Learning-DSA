@@ -1,38 +1,32 @@
 void main() {
-  List<int> numbers = [5, 3, 8, 4, 2, 7, 1, 6];
-
-  print('Original List: $numbers');
-  quickSort(numbers, 0, numbers.length - 1);
-  print('Sorted List: $numbers');
+  List<int> array = [3, 6, 4, 8, 1, 5, 2, 7, 9];
+  quickSort(array, 0, array.length - 1);
+  print("the Sorted array is $array");
 }
 
-void quickSort(List<int> arr, int low, int high) {
-  if (low < high) {
-    int pivotIndex = partition(arr, low, high);
+quickSort(List<int> array, start, end) {
+  if (end <= start) return;
 
-    quickSort(arr, low, pivotIndex - 1);
-    quickSort(arr, pivotIndex + 1, high);
-  }
+  int piviot = partition(array, start, end);
+  quickSort(array, start, piviot - 1);
+  quickSort(array, piviot + 1, end);
 }
 
-int partition(List<int> arr, int low, int high) {
-  int pivot = arr[high];
-  int i = low - 1;
-
-  for (int j = low; j < high; j++) {
-    if (arr[j] < pivot) {
+partition(List<int> array, start, end) {
+  int piviot = array[end];
+  int i = start - 1;
+  for (int j = start; j <= end - 1; j++) {
+    if (array[j] < piviot) {
       i++;
-      swap(arr, i, j);
+      int temp = array[i];
+      array[i] = array[j];
+      array[j] = temp;
     }
   }
+  i++;
+  int temp = array[i];
+  array[i] = array[end];
+  array[end] = temp;
 
-  swap(arr, i + 1, high);
-
-  return i + 1;
-}
-
-void swap(List<int> arr, int i, int j) {
-  int temp = arr[i];
-  arr[i] = arr[j];
-  arr[j] = temp;
+  return i;
 }
