@@ -1,5 +1,6 @@
 void main() {
   List<int> array = [3, 6, 4, 8, 1, 5, 2, 7, 9];
+  print("the unsorted array is $array");
   quickSort(array, 0, array.length - 1);
   print("the Sorted array is $array");
 }
