@@ -1,6 +1,6 @@
 class HashTable {
   final int size;
-  List<List<MapEntry>> _table;
+  late List<List<MapEntry>> _table;
 
   HashTable(this.size) {
     _table = List.generate(size, (index) => []);

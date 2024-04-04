@@ -1,3 +1,10 @@
+void main() {
+  List<int> arr = [64, 34, 25, 12, 22, 11, 90];
+  print("Original array: $arr");
+  List<int> sortedArr = mergeSort(arr);
+  print("Sorted array: $sortedArr");
+}
+
 List<int> mergeSort(List<int> arr) {
   if (arr.length <= 1) {
     return arr;
@@ -35,11 +42,4 @@ List<int> merge(List<int> left, List<int> right) {
   }
 
   return result;
-}
-
-void main() {
-  List<int> arr = [64, 34, 25, 12, 22, 11, 90];
-  print("Original array: $arr");
-  List<int> sortedArr = mergeSort(arr);
-  print("Sorted array: $sortedArr");
 }
