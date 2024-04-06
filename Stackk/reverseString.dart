@@ -40,5 +40,3 @@ String reverseString(String input) {
 
   return reversedString;
 }
-
-
