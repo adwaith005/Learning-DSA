@@ -16,7 +16,7 @@ quickSort(List<int> array, start, end) {
 partition(List<int> array, start, end) {
   int piviot = array[end];
   int i = start - 1;
-  for (int j = start; j <= end - 1; j++) {
+  for (int j = start; j <= end - 1; j++) {  
     if (array[j] < piviot) {
       i++;
       int temp = array[i];

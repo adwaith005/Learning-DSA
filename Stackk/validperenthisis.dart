@@ -6,9 +6,9 @@ bool isValidParentheses(String s) {
       stack.add(char);
     } else {
       if (stack.isEmpty ||
-          (char == ')' && stack.last != '(') ||
-          (char == ']' && stack.last != '[') ||
-          (char == '}' && stack.last != '{')) {
+          (char == ")" && stack.last != "(") ||
+          (char == "]" && stack.last != "[") ||
+          (char == "}" && stack.last != "{")) {
         return false;
       }
       stack.removeLast();

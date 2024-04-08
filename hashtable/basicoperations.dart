@@ -28,7 +28,7 @@
 // If j is the slot for multiple elements, it contains a pointer to the head of the list of elements. If no element is present, j contains NIL.
 
 // 2. Open Addressing
-// Unlike chaining, open addressing doesn't store multiple elements into the same slot. Here, each slot is either filled with a single key or left NIL.
+//  ame slot. Here, each slot is either filled with a single key or left NIL.
 
 // Different techniques used in open addressing are:
 

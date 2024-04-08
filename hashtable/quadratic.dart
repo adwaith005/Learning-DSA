@@ -1,3 +1,4 @@
+
 class HashTable {
   late List<dynamic> _keys;
   late List<dynamic> _values;
@@ -9,7 +10,7 @@ class HashTable {
     _size = size;
   }
 
-  int _hash(dynamic key) {
+  int _hash(dynamic key) { 
     return key.hashCode % _size;
   }
 

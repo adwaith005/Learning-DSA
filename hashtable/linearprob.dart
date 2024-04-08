@@ -41,11 +41,13 @@ class HashTable {
 void main() {
   HashTable table = HashTable(10);
   table.insert(5, "apple");
-  table.insert(15, "banana");
+  table.insert(10, "banana");
   table.insert(25, "orange");
+  table.insert(30, "avacado");
 
-  print(table.search(5)); // Output: apple
-  print(table.search(15)); // Output: banana
-  print(table.search(25)); // Output: orange
-  print(table.search(35)); // Output: null (not found)
+  for (int i = 0; i < table._size; i++) {
+    if (table._keys[i] != null) {
+      print("Key: ${table._keys[i]}, Value: ${table._values[i]}");
+    }
+  }
 }
